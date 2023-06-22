@@ -18,18 +18,36 @@
         <input type="email" name="email" id="email" required><br><br>
 
         <label for="mobileNo">Mobile No.</label><br>
-        <input type="text" name="mobileNo" id="mobileNo"><br><br>
+        <input type="text" name="mobileNo" id="mobileNo" required><br><br>
+
+
+        <label for="address">Address</label><br>
+        <input type="text" name="address" id="address"><br><br>
+
+        <label for="pin">4 Digit Pin</label><br>
+        <input type="text" id="pin" name="pin" required><br><br>
+
+        <label for="balance">Opening Balance</label><br>
+        <input type="text" name="balance" id="balance"> <br> <br>
+
 
         <label for="gender">Gender</label>
-        <select name="gender" id="gender">
+        <select name="gender" id="gender" required>
             <option value="">select</option>
             <option value="MALE">Male</option>
             <option value="FEMALE">Female</option>
             <option value="OTHER">Other</option>
         </select><br><br>
 
-        <label for="address">Address</label><br>
-        <input type="text" name="text" id="text"><br><br>
+        <label for="accountType">AccountType</label>
+        <select name="accountType" id="accountType" required>
+            <option value="">select</option>
+            <option value="SAVING">Saving</option>
+            <option value="MONEY">Money</option>
+            <option value="CURRENT">Current</option>
+            <option value="CHEQUE">Cheque</option>
+        </select>
+        <br><br>
 
         <input type="submit" name="Create" id="submit">
 

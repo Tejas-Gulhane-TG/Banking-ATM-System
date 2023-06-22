@@ -5,6 +5,9 @@ import com.example.Banking.System.RestAPI.Enum.TransactionType;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import org.hibernate.annotations.CurrentTimestamp;
+
+import java.util.Date;
 
 @Entity
 @Data
@@ -24,6 +27,9 @@ public class Transaction {
     double amount;
 
     double mainBalance;
+
+    @CurrentTimestamp
+    Date dateOfTransaction;
 
     @Enumerated(EnumType.STRING)
     TransactionType transactionType;
