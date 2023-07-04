@@ -1,27 +1,24 @@
 package com.example.Banking.System.RestAPI.Transformer;
 
-import com.example.Banking.System.RestAPI.Dto.RequestDto.TransactionRequestDto;
-import com.example.Banking.System.RestAPI.Dto.ResponseDto.TransactionResponseDto;
+
+import com.example.Banking.System.RestAPI.Dto.RequestDto.DepositRequestDto;
+import com.example.Banking.System.RestAPI.Dto.RequestDto.WithdrawRequestDto;
+import com.example.Banking.System.RestAPI.Enum.TransactionType;
 import com.example.Banking.System.RestAPI.Model.Transaction;
 
 public class TransactionTransformer {
 
-    public static Transaction RequestDtoToTransaction(TransactionRequestDto transactionRequestDto){
+    public static Transaction DepositDtoToTransaction(DepositRequestDto depositRequestDto){
         return Transaction.builder()
-                .transactionType(transactionRequestDto.getTransactionType())
-                .accountNo(transactionRequestDto.getAccountNo())
-                .amount(transactionRequestDto.getAmount())
-                .pin(transactionRequestDto.getPin())
+                .transactionType(TransactionType.DEPOSIT)
+                .amount(depositRequestDto.getMoney())
                 .build();
     }
 
-    public static TransactionResponseDto TransactionToResponseDto(Transaction transaction){
-        return TransactionResponseDto.builder()
-                .transactionStatus(transaction.getTransactionStatus())
-                .balance(transaction.getMainBalance())
-                .AccountNo(transaction.getAccountNo())
-                .transactionType(transaction.getTransactionType())
-                .Amount(transaction.getAmount())
+    public static Transaction  WithdrawDtoToTransaction(WithdrawRequestDto withdrawRequestDto){
+        return Transaction.builder()
+                .amount(withdrawRequestDto.getMoney())
+                .transactionType(TransactionType.WITHDRAW)
                 .build();
     }
 }

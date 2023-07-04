@@ -1,10 +1,10 @@
 package com.example.Banking.System.RestAPI.Service;
 
-import com.example.Banking.System.RestAPI.Dto.RequestDto.UserRequestDto;
-import com.example.Banking.System.RestAPI.Dto.ResponseDto.UserResponseDto;
+
+import com.example.Banking.System.RestAPI.Model.User;
 
 public interface UserService {
-    UserResponseDto AddUser(UserRequestDto userRequestDto);
+    void AddUser(User user);
 
-    UserResponseDto GetUser(long mobileNo);
+    User GetUser(long accountNo);
 }

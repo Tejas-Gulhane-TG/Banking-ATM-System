@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Information</title>
+
+
+    <style>
+        body{
+
+background-image: url(https://images.unsplash.com/photo-1510936111840-65e151ad71bb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=890&q=80);
+background-attachment: fixed;
+background-size: 100%;
+text-align: center;
+color: aliceblue;
+}
+h1{
+font-size: 75px;
+text-shadow: 2pt 2pt 2pt rgb(23, 235, 250);
+color: rgb(252, 24, 183);
+}
+h2{
+    font-size: 30px;
+
+}
+h3{
+    color: rgb(255, 251, 2);
+    text-shadow: 2pt 2pt 2pt rgb(1, 1, 1);
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+form{
+font-size: 15pt;
+font-weight: 500;
+}
+
+button{
+width: 200pt;
+height: 35pt;
+font-size: 25pt;
+background-color: rgb(0, 0, 0);
+color: aliceblue;
+}
+input{
+height: 30pt;
+width: 500pt;
+font-size:25pt;
+text-align: center;
+}
+label{
+font-size: 22pt;
+}
+    </style>
+
+</head>
+<body>
+    <form action="#" method="get">
+        <h1 th:text="${Massage}"></h1>
+        <h2> Account Holder Name </h2>
+        <h3 th:text="${Name}">Name </h3>
+        <h2>Account Number</h2>
+        <h3 th:text="${AccountNo}">Account No</h3>
+        <h2>Account Type</h2>
+        <h3 th:text="${AccountType}">Account Type</h3>
+
+        <button type="submit" formaction="/" >Home</button>
+    </form>
+</body>
+</html>

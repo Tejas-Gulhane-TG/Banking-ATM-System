@@ -1,7 +1,5 @@
 package com.example.Banking.System.RestAPI.Dto.RequestDto;
 
-import com.example.Banking.System.RestAPI.Enum.AccountType;
-import com.example.Banking.System.RestAPI.Enum.Gender;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,22 +10,10 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class UserRequestDto {
+public class WithdrawRequestDto {
 
-    String name;
-
-    String emailId;
-
-    long mobileNo;
-
-    Gender gender;
-
-    String address;
-
-    AccountType accountType;
-
+    long accountNo;
     int pin;
-
-    double balance;
+    double money;
 
 }

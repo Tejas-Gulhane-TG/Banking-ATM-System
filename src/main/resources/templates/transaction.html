@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="transaction.css">
+    <title>Get All Transaction</title>
+
+    <style>
+        body{
+
+    background-image: url(https://images.pexels.com/photos/235985/pexels-photo-235985.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+    background-attachment: fixed;
+    background-size: 100%;
+    text-align: center;
+}
+h1{
+    font-size: 50px;
+    text-shadow: 2pt 2pt 2pt white;
+}
+
+form{
+    font-size: 15pt;
+    font-weight: 500;
+}
+
+button{
+    width: 200pt;
+    height: 35pt;
+    font-size: 25pt;
+    background-color: rgb(0, 0, 0);
+    color: aliceblue;
+}
+input{
+    height: 30pt;
+    width: 500pt;
+    font-size:25pt;
+    text-align: center;
+}
+    </style>
+
+</head>
+<body>
+    
+    <h1>Get All Transaction Of Account</h1>
+    <form action="transactions" method="get">
+
+       <label for="accountNo" style="font-size: 22pt;"><b>Account No.</b></label><br>
+        <input type="tel" name="accountNo" id="accountNo" required minlength="10" maxlength="10">
+        <br><br>
+        <label for="pin" style="font-size: 21pt;"><b>4 Digit Pin</b></label><br>
+        <input type="password" name="pin" id="pin" maxlength="4" minlength="4" required>
+        <br><br>
+        <button type="submit"><b>Continue</b></button>
+
+    </form>
+
+</body>
+</html>

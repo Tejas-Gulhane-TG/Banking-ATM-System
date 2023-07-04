@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Massage</title>
+
+    <style>
+        body{
+
+background-image: url(https://images.unsplash.com/photo-1511649475669-e288648b2339?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80);
+background-attachment: fixed;
+background-size: 100%;
+text-align: center;
+}
+h1{
+font-size: 75px;
+text-shadow: 2pt 2pt 2pt rgb(0, 0, 0);
+color: rgb(24, 59, 128) ;
+}
+
+
+h3{
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+    text-shadow: 1pt 1pt 1pt rgb(255, 255, 255);
+    
+}
+h2{
+    color: rgb(255, 254, 255);
+    font-size: 25pt;
+    text-shadow: 2pt 2pt 2pt rgb(0, 0, 0);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+button{
+width: 200pt;
+height: 35pt;
+font-size: 25pt;
+background-color: rgb(0, 0, 0);
+color: aliceblue;
+}
+tr{
+    text-align: center;
+}
+table{
+    text-align: center;
+}
+
+    </style>
+
+</head>
+<body>
+
+    <form action="#" method="get">
+
+        <h1 th:text="${Massage}"></h1>
+        <h2>Name : </h2>
+        <h3 th:text="${Name}"></h3>
+        <h2>Account No : </h2>
+        <h3 th:text="${Account}"></h3>
+        <h2>Amount : </h2>
+        <h3 th:text="${Amount}"></h3>
+
+
+<!--        <table>-->
+<!--            <thead>-->
+<!--            <tr>-->
+<!--                <th> Title </th>-->
+<!--                <th> Author </th>-->
+<!--            </tr>-->
+<!--            </thead>-->
+<!--            <tbody>-->
+<!--            <tr th:if="${Lists.empty}">-->
+<!--                <td colspan="2"> No Transactions </td>-->
+<!--            </tr>-->
+<!--            <tr th:each="List : ${Lists}">-->
+<!--                <td><span th:text="${Lists}"> Title </span></td>-->
+<!--            </tr>-->
+<!--            </tbody>-->
+<!--        </table>-->
+
+
+        <button type="submit" formaction="/" >Home</button>
+    </form>
+
+
+    <!-- <form action="#" method="get">
+        <table style="border: 1px; color: black;">
+            <th th:text="${Massage}"></th>
+            <tr><h3>Name :</h3></tr>
+            <tr><td th:text="${Name}"></td></tr>
+            <tr><h3>Account No : </h3></tr>
+            <tr><td th:text="${Account}"></td></tr>
+            <tr><h3>Amount : </h3></tr>
+            <tr><td th:text="${Amount}"></td></tr>
+        </table>
+        <button type="submit" formaction="/" >Home</button>
+    </form> -->
+
+
+
+</body>
+</html>
