@@ -1,4 +1,4 @@
-# Banking-System-Web-Application
+# Banking-ATM-System-Web-Application
 ATM System Created using Java, Spring, HTML, CSS, 
 provided some Banking facilities like
 1. Create Account.
