@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" >
+    <title>Get Transactions</title>
+
+
+    <style>
+        body{
+
+            background-image: url(https://images.unsplash.com/photo-1511649475669-e288648b2339?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80);
+            background-attachment: fixed;
+            background-size: 100%;
+            text-align: center;
+        }
+
+        h1{
+            text-shadow: 2pt 2pt 2pt white;
+            font-size: 30pt;
+        }
+
+        button{
+            width: 200pt;
+            height: 35pt;
+            font-size: 25pt;
+            background-color: rgb(0, 0, 0);
+            color: aliceblue;
+        }
+        .Info{
+            font-size: 20pt;
+            font-weight: bold;
+        }
+
+        table{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .status{
+            font-weight: bold;
+        }
+        .break{
+            font-weight: bolder;
+            font-size: 25pt;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <form action="#" method="get">
+        <h1 th:text="${Massage}"></h1>
+
+                <table class="Info">
+                    <tr>
+                        <h3>
+                            <td>Name :</td>
+                            <td th:text="${Name}"></td>
+                        </h3>
+                    </tr>
+                    <tr>
+                        <td>Account No  :</td>
+                        <td th:text="${Account}"></td>
+                    </tr>
+                    <tr>
+                        <td>Main Balance :</td>
+                        <td th:text="${balance}"></td>
+                    </tr>
+                </table>
+
+                <div th:each="Transaction : ${Lists}">
+                    <table>
+                        <td class="break">********************</td>
+                        <tr>
+                            <td>TransactionId :</td>
+                            <td th:text="${Transaction.Id}"></td>
+                        </tr>
+                        <tr>
+                            <td>TransactionType :</td>
+                            <td th:text="${Transaction.transactionType}"></td>
+                        </tr>
+                        <tr>
+                            <td>TransactionAmount :</td>
+                            <td th:text="${Transaction.amount}"></td>
+                        </tr>
+                        <tr>
+                            <td>TransactionStatus :</td>
+                            <td class="status" th:text="${Transaction.transactionStatus}"></td>
+                        </tr>
+                    </table>
+                </div> <br>
+
+                
+            <button type="submit" formaction="/" >Home</button>
+    </form>
+
+</body>
+</html>

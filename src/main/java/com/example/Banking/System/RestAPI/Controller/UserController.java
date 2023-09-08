@@ -3,7 +3,6 @@ package com.example.Banking.System.RestAPI.Controller;
 import com.example.Banking.System.RestAPI.Dto.RequestDto.WithdrawRequestDto;
 import com.example.Banking.System.RestAPI.Model.Transaction;
 import com.example.Banking.System.RestAPI.Model.User;
-import com.example.Banking.System.RestAPI.Repository.UserRepository;
 import com.example.Banking.System.RestAPI.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,10 +28,10 @@ public class UserController {
         return "create";
     }
 
-//    @GetMapping("/deposit")
-//    public String Deposit(){
-//        return "deposit";
-//    }
+    @GetMapping("/balance")
+    public String Deposit(){
+        return "transaction";
+    }
 
     @GetMapping("/withdraw")
     public String Withdraw(){
@@ -68,7 +67,7 @@ public class UserController {
         }
         model.addAttribute("Name", user.getName());
         model.addAttribute("AccountNo", user.getMobileNo());
-        model.addAttribute("Massage", "ACCOUNT INFORMATION");
+        model.addAttribute("Massage", "ACCOUNT-INFORMATION");
         model.addAttribute("AccountType", user.getAccountType());
         return "UserInfo";
     }
@@ -78,18 +77,19 @@ public class UserController {
         User user = userService.GetUser(withdrawRequestDto.getAccountNo());
         if(user == null){
             model.addAttribute("Massage", "Account Not Found");
-            return "massage";
+            return "getAllTransactions";
         }
         if(user.getPin() != withdrawRequestDto.getPin()){
             model.addAttribute("Massage", "Wrong PIN");
-            return "massage";
+            return "getAllTransactions";
         }
         List<Transaction> Transactionlist = user.getTransactionList();
         model.addAttribute("Massage", "Transaction List are following");
         model.addAttribute("Name", user.getName());
         model.addAttribute("Account", user.getAccountNo());
+        model.addAttribute("balance", user.getBalance());
         model.addAttribute("Lists", Transactionlist);
-        return "massage";
+        return "getAllTransactions";
     }
 
 }
